@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página Gold</title>
+</head>
+<body>
+    <h1>Bem-vindo à Página Gold</h1>
+
+    <h2>Carros Disponíveis para Clientes Gold</h2>
+
+    <ul>
+        {% for carro in carros_gold %}
+        <li>
+            <p>Marca: {{ carro.marca }}</p>
+            <p>Preço: R$ {{ carro.preco }}</p>
+            <p>Data de Início: {{ carro.data_inicio }}</p>
+            <p>Data de Fim: {{ carro.data_fim }}</p>
+            <p>Disponível: {{ carro.disponibilidade }}</p>
+
+            <!-- Adicione o botão "Alugar" com um formulário -->
+            <form action="{{ url_for('pagamento') }}" method="get">
+                <input type="hidden" name="user" value="{{ user }}">
+                <input type="hidden" name="carro_id" value="{{ carro.id }}">
+                <input type="hidden" name="nome_cliente" value="{{ nome_cliente }}">
+                <button type="submit">Alugar</button>
+            </form>
+        </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
+
+
+

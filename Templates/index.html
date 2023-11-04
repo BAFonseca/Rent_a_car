@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Página de Registro e Login</title>
+</head>
+<body>
+    <h1>Registo e Login</h1>
+    <form action="/registro" method="post">
+    <h2>Registo</h2>
+    <input type="text" name="user" placeholder="User"><br>
+    <input type="text" name="nome" placeholder="Nome"><br>
+    <input type="password" name="password" placeholder="Password"><br>
+    <input type="text" name="user_type" placeholder="Tipo de Cliente (Gold, Silver, Economic)"><br>
+    <input type="submit" value="Registar">
+</form>
+
+    <br>
+    <form action="/login" method="post">
+        <h2>Login</h2>
+        <input type="text" name="user" placeholder="User"><br>
+        <input type="password" name="password" placeholder="Password"><br>
+        <input type="submit" value="Login">
+    </form>
+</body>
+</html>
